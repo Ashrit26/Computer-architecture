@@ -1,0 +1,301 @@
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls  ms/call  ms/call  name    
+100.00      0.03     0.03        1    30.00    30.00  cuda_kmeans(float**, int, int, int, float, int*, int*)
+  0.00      0.03     0.00      350     0.00     0.00  checkCuda(cudaError)
+  0.00      0.03     0.00      272     0.00     0.00  dim3::dim3(unsigned int, unsigned int, unsigned int)
+  0.00      0.03     0.00      136     0.00     0.00  cudaError cudaLaunch<char>(char*)
+  0.00      0.03     0.00      136     0.00     0.00  checkLastCudaError()
+  0.00      0.03     0.00       68     0.00     0.00  compute_delta(int*, int, int)
+  0.00      0.03     0.00       68     0.00     0.00  find_nearest_cluster(int, int, int, float*, float*, int*, int*)
+  0.00      0.03     0.00       68     0.00     0.00  __device_stub__Z13compute_deltaPiii(int*, int, int)
+  0.00      0.03     0.00       68     0.00     0.00  __device_stub__Z20find_nearest_clusteriiiPfS_PiS0_(int, int, int, float*, float*, int*, int*)
+  0.00      0.03     0.00        4     0.00     0.00  wtime()
+  0.00      0.03     0.00        2     0.00     0.00  cudaError cudaMalloc<float>(float**, unsigned long)
+  0.00      0.03     0.00        2     0.00     0.00  cudaError cudaMalloc<int>(int**, unsigned long)
+  0.00      0.03     0.00        1     0.00     0.00  file_write(char*, int, int, int, float**, int*)
+  0.00      0.03     0.00        1     0.00     0.00  file_read(int, char*, int*, int*)
+  0.00      0.03     0.00        1     0.00     0.00  nextPowerOfTwo(int)
+  0.00      0.03     0.00        1     0.00     0.00  ____nv_dummy_param_ref(void*)
+  0.00      0.03     0.00        1     0.00     0.00  ____nv_dummy_param_ref(void*)
+  0.00      0.03     0.00        1     0.00     0.00  ____nv_dummy_param_ref(void*)
+  0.00      0.03     0.00        1     0.00     0.00  ____nv_dummy_param_ref(void*)
+  0.00      0.03     0.00        1     0.00     0.00  __sti____cudaRegisterAll()
+  0.00      0.03     0.00        1     0.00     0.00  __sti____cudaRegisterAll()
+  0.00      0.03     0.00        1     0.00     0.00  __sti____cudaRegisterAll()
+  0.00      0.03     0.00        1     0.00     0.00  __sti____cudaRegisterAll()
+  0.00      0.03     0.00        1     0.00     0.00  __nv_cudaEntityRegisterCallback(void**)
+  0.00      0.03     0.00        1     0.00     0.00  __nv_cudaEntityRegisterCallback(void**)
+  0.00      0.03     0.00        1     0.00     0.00  __nv_cudaEntityRegisterCallback(void**)
+  0.00      0.03     0.00        1     0.00     0.00  __nv_cudaEntityRegisterCallback(void**)
+  0.00      0.03     0.00        1     0.00     0.00  __nv_save_fatbinhandle_for_managed_rt(void**)
+  0.00      0.03     0.00        1     0.00     0.00  __nv_save_fatbinhandle_for_managed_rt(void**)
+  0.00      0.03     0.00        1     0.00     0.00  __nv_save_fatbinhandle_for_managed_rt(void**)
+  0.00      0.03     0.00        1     0.00     0.00  __nv_save_fatbinhandle_for_managed_rt(void**)
+
+ %         the percentage of the total running time of the
+time       program used by this function.
+
+cumulative a running sum of the number of seconds accounted
+ seconds   for by this function and those listed above it.
+
+ self      the number of seconds accounted for by this
+seconds    function alone.  This is the major sort for this
+           listing.
+
+calls      the number of times this function was invoked, if
+           this function is profiled, else blank.
+ 
+ self      the average number of milliseconds spent in this
+ms/call    function per call, if this function is profiled,
+	   else blank.
+
+ total     the average number of milliseconds spent in this
+ms/call    function and its descendents per call, if this 
+	   function is profiled, else blank.
+
+name       the name of the function.  This is the minor sort
+           for this listing. The index shows the location of
+	   the function in the gprof listing. If the index is
+	   in parenthesis it shows where it would appear in
+	   the gprof listing if it were to be printed.
+
+Copyright (C) 2012-2014 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+		     Call graph (explanation follows)
+
+
+granularity: each sample hit covers 2 byte(s) for 33.33% of 0.03 seconds
+
+index % time    self  children    called     name
+                                                 <spontaneous>
+[1]    100.0    0.00    0.03                 main [1]
+                0.03    0.00       1/1           cuda_kmeans(float**, int, int, int, float, int*, int*) [2]
+                0.00    0.00       4/4           wtime() [244]
+                0.00    0.00       1/1           file_read(int, char*, int*, int*) [248]
+                0.00    0.00       1/1           file_write(char*, int, int, int, float**, int*) [247]
+-----------------------------------------------
+                0.03    0.00       1/1           main [1]
+[2]    100.0    0.03    0.00       1         cuda_kmeans(float**, int, int, int, float, int*, int*) [2]
+                0.00    0.00     272/272         dim3::dim3(unsigned int, unsigned int, unsigned int) [237]
+                0.00    0.00     214/350         checkCuda(cudaError) [236]
+                0.00    0.00     136/136         checkLastCudaError() [239]
+                0.00    0.00      68/68          find_nearest_cluster(int, int, int, float*, float*, int*, int*) [241]
+                0.00    0.00      68/68          compute_delta(int*, int, int) [240]
+                0.00    0.00       2/2           cudaError cudaMalloc<float>(float**, unsigned long) [245]
+                0.00    0.00       2/2           cudaError cudaMalloc<int>(int**, unsigned long) [246]
+                0.00    0.00       1/1           nextPowerOfTwo(int) [249]
+-----------------------------------------------
+                0.00    0.00     136/350         checkLastCudaError() [239]
+                0.00    0.00     214/350         cuda_kmeans(float**, int, int, int, float, int*, int*) [2]
+[236]    0.0    0.00    0.00     350         checkCuda(cudaError) [236]
+-----------------------------------------------
+                0.00    0.00     272/272         cuda_kmeans(float**, int, int, int, float, int*, int*) [2]
+[237]    0.0    0.00    0.00     272         dim3::dim3(unsigned int, unsigned int, unsigned int) [237]
+-----------------------------------------------
+                0.00    0.00      68/136         __device_stub__Z20find_nearest_clusteriiiPfS_PiS0_(int, int, int, float*, float*, int*, int*) [243]
+                0.00    0.00      68/136         __device_stub__Z13compute_deltaPiii(int*, int, int) [242]
+[238]    0.0    0.00    0.00     136         cudaError cudaLaunch<char>(char*) [238]
+-----------------------------------------------
+                0.00    0.00     136/136         cuda_kmeans(float**, int, int, int, float, int*, int*) [2]
+[239]    0.0    0.00    0.00     136         checkLastCudaError() [239]
+                0.00    0.00     136/350         checkCuda(cudaError) [236]
+-----------------------------------------------
+                0.00    0.00      68/68          cuda_kmeans(float**, int, int, int, float, int*, int*) [2]
+[240]    0.0    0.00    0.00      68         compute_delta(int*, int, int) [240]
+                0.00    0.00      68/68          __device_stub__Z13compute_deltaPiii(int*, int, int) [242]
+-----------------------------------------------
+                0.00    0.00      68/68          cuda_kmeans(float**, int, int, int, float, int*, int*) [2]
+[241]    0.0    0.00    0.00      68         find_nearest_cluster(int, int, int, float*, float*, int*, int*) [241]
+                0.00    0.00      68/68          __device_stub__Z20find_nearest_clusteriiiPfS_PiS0_(int, int, int, float*, float*, int*, int*) [243]
+-----------------------------------------------
+                0.00    0.00      68/68          compute_delta(int*, int, int) [240]
+[242]    0.0    0.00    0.00      68         __device_stub__Z13compute_deltaPiii(int*, int, int) [242]
+                0.00    0.00      68/136         cudaError cudaLaunch<char>(char*) [238]
+-----------------------------------------------
+                0.00    0.00      68/68          find_nearest_cluster(int, int, int, float*, float*, int*, int*) [241]
+[243]    0.0    0.00    0.00      68         __device_stub__Z20find_nearest_clusteriiiPfS_PiS0_(int, int, int, float*, float*, int*, int*) [243]
+                0.00    0.00      68/136         cudaError cudaLaunch<char>(char*) [238]
+-----------------------------------------------
+                0.00    0.00       4/4           main [1]
+[244]    0.0    0.00    0.00       4         wtime() [244]
+-----------------------------------------------
+                0.00    0.00       2/2           cuda_kmeans(float**, int, int, int, float, int*, int*) [2]
+[245]    0.0    0.00    0.00       2         cudaError cudaMalloc<float>(float**, unsigned long) [245]
+-----------------------------------------------
+                0.00    0.00       2/2           cuda_kmeans(float**, int, int, int, float, int*, int*) [2]
+[246]    0.0    0.00    0.00       2         cudaError cudaMalloc<int>(int**, unsigned long) [246]
+-----------------------------------------------
+                0.00    0.00       1/1           main [1]
+[247]    0.0    0.00    0.00       1         file_write(char*, int, int, int, float**, int*) [247]
+-----------------------------------------------
+                0.00    0.00       1/1           main [1]
+[248]    0.0    0.00    0.00       1         file_read(int, char*, int*, int*) [248]
+-----------------------------------------------
+                0.00    0.00       1/1           cuda_kmeans(float**, int, int, int, float, int*, int*) [2]
+[249]    0.0    0.00    0.00       1         nextPowerOfTwo(int) [249]
+-----------------------------------------------
+                0.00    0.00       1/1           __cudaUnregisterBinaryUtil() [302]
+[250]    0.0    0.00    0.00       1         ____nv_dummy_param_ref(void*) [250]
+-----------------------------------------------
+                0.00    0.00       1/1           __cudaUnregisterBinaryUtil() [303]
+[251]    0.0    0.00    0.00       1         ____nv_dummy_param_ref(void*) [251]
+-----------------------------------------------
+                0.00    0.00       1/1           __cudaUnregisterBinaryUtil() [304]
+[252]    0.0    0.00    0.00       1         ____nv_dummy_param_ref(void*) [252]
+-----------------------------------------------
+                0.00    0.00       1/1           __cudaUnregisterBinaryUtil() [305]
+[253]    0.0    0.00    0.00       1         ____nv_dummy_param_ref(void*) [253]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [1204]
+[254]    0.0    0.00    0.00       1         __sti____cudaRegisterAll() [254]
+                0.00    0.00       1/1           __nv_cudaEntityRegisterCallback(void**) [258]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [1204]
+[255]    0.0    0.00    0.00       1         __sti____cudaRegisterAll() [255]
+                0.00    0.00       1/1           __nv_cudaEntityRegisterCallback(void**) [259]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [1204]
+[256]    0.0    0.00    0.00       1         __sti____cudaRegisterAll() [256]
+                0.00    0.00       1/1           __nv_cudaEntityRegisterCallback(void**) [260]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [1204]
+[257]    0.0    0.00    0.00       1         __sti____cudaRegisterAll() [257]
+                0.00    0.00       1/1           __nv_cudaEntityRegisterCallback(void**) [261]
+-----------------------------------------------
+                0.00    0.00       1/1           __sti____cudaRegisterAll() [254]
+[258]    0.0    0.00    0.00       1         __nv_cudaEntityRegisterCallback(void**) [258]
+                0.00    0.00       1/1           __nv_save_fatbinhandle_for_managed_rt(void**) [262]
+-----------------------------------------------
+                0.00    0.00       1/1           __sti____cudaRegisterAll() [255]
+[259]    0.0    0.00    0.00       1         __nv_cudaEntityRegisterCallback(void**) [259]
+                0.00    0.00       1/1           __nv_save_fatbinhandle_for_managed_rt(void**) [263]
+-----------------------------------------------
+                0.00    0.00       1/1           __sti____cudaRegisterAll() [256]
+[260]    0.0    0.00    0.00       1         __nv_cudaEntityRegisterCallback(void**) [260]
+                0.00    0.00       1/1           __nv_save_fatbinhandle_for_managed_rt(void**) [264]
+-----------------------------------------------
+                0.00    0.00       1/1           __sti____cudaRegisterAll() [257]
+[261]    0.0    0.00    0.00       1         __nv_cudaEntityRegisterCallback(void**) [261]
+                0.00    0.00       1/1           __nv_save_fatbinhandle_for_managed_rt(void**) [265]
+-----------------------------------------------
+                0.00    0.00       1/1           __nv_cudaEntityRegisterCallback(void**) [258]
+[262]    0.0    0.00    0.00       1         __nv_save_fatbinhandle_for_managed_rt(void**) [262]
+-----------------------------------------------
+                0.00    0.00       1/1           __nv_cudaEntityRegisterCallback(void**) [259]
+[263]    0.0    0.00    0.00       1         __nv_save_fatbinhandle_for_managed_rt(void**) [263]
+-----------------------------------------------
+                0.00    0.00       1/1           __nv_cudaEntityRegisterCallback(void**) [260]
+[264]    0.0    0.00    0.00       1         __nv_save_fatbinhandle_for_managed_rt(void**) [264]
+-----------------------------------------------
+                0.00    0.00       1/1           __nv_cudaEntityRegisterCallback(void**) [261]
+[265]    0.0    0.00    0.00       1         __nv_save_fatbinhandle_for_managed_rt(void**) [265]
+-----------------------------------------------
+
+ This table describes the call tree of the program, and was sorted by
+ the total amount of time spent in each function and its children.
+
+ Each entry in this table consists of several lines.  The line with the
+ index number at the left hand margin lists the current function.
+ The lines above it list the functions that called this function,
+ and the lines below it list the functions this one called.
+ This line lists:
+     index	A unique number given to each element of the table.
+		Index numbers are sorted numerically.
+		The index number is printed next to every function name so
+		it is easier to look up where the function is in the table.
+
+     % time	This is the percentage of the `total' time that was spent
+		in this function and its children.  Note that due to
+		different viewpoints, functions excluded by options, etc,
+		these numbers will NOT add up to 100%.
+
+     self	This is the total amount of time spent in this function.
+
+     children	This is the total amount of time propagated into this
+		function by its children.
+
+     called	This is the number of times the function was called.
+		If the function called itself recursively, the number
+		only includes non-recursive calls, and is followed by
+		a `+' and the number of recursive calls.
+
+     name	The name of the current function.  The index number is
+		printed after it.  If the function is a member of a
+		cycle, the cycle number is printed between the
+		function's name and the index number.
+
+
+ For the function's parents, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the function into this parent.
+
+     children	This is the amount of time that was propagated from
+		the function's children into this parent.
+
+     called	This is the number of times this parent called the
+		function `/' the total number of times the function
+		was called.  Recursive calls to the function are not
+		included in the number after the `/'.
+
+     name	This is the name of the parent.  The parent's index
+		number is printed after it.  If the parent is a
+		member of a cycle, the cycle number is printed between
+		the name and the index number.
+
+ If the parents of the function cannot be determined, the word
+ `<spontaneous>' is printed in the `name' field, and all the other
+ fields are blank.
+
+ For the function's children, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the child into the function.
+
+     children	This is the amount of time that was propagated from the
+		child's children to the function.
+
+     called	This is the number of times the function called
+		this child `/' the total number of times the child
+		was called.  Recursive calls by the child are not
+		listed in the number after the `/'.
+
+     name	This is the name of the child.  The child's index
+		number is printed after it.  If the child is a
+		member of a cycle, the cycle number is printed
+		between the name and the index number.
+
+ If there are any cycles (circles) in the call graph, there is an
+ entry for the cycle-as-a-whole.  This entry shows who called the
+ cycle (as parents) and the members of the cycle (as children.)
+ The `+' recursive calls entry shows the number of function calls that
+ were internal to the cycle, and the calls entry for each member shows,
+ for that member, how many times it was called from other members of
+ the cycle.
+
+Copyright (C) 2012-2014 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+Index by function name
+
+ [238] cudaError cudaLaunch<char>(char*) (cuda_runtime.h) [241] find_nearest_cluster(int, int, int, float*, float*, int*, int*) (cuda_kmeans.cu) [260] __nv_cudaEntityRegisterCallback(void**) (tmpxft_0002d193_00000000-5_cuda_wtime.cudafe1.stub.c)
+ [245] cudaError cudaMalloc<float>(float**, unsigned long) (cuda_runtime.h) [250] ____nv_dummy_param_ref(void*) (host_runtime.h) [261] __nv_cudaEntityRegisterCallback(void**) (tmpxft_0002d1af_00000000-5_cuda_kmeans.cudafe1.stub.c)
+ [246] cudaError cudaMalloc<int>(int**, unsigned long) (cuda_runtime.h) [251] ____nv_dummy_param_ref(void*) (host_runtime.h) [242] __device_stub__Z13compute_deltaPiii(int*, int, int) (tmpxft_0002d1af_00000000-5_cuda_kmeans.cudafe1.stub.c)
+ [247] file_write(char*, int, int, int, float**, int*) [252] ____nv_dummy_param_ref(void*) (host_runtime.h) [262] __nv_save_fatbinhandle_for_managed_rt(void**) (cuda_main.cu)
+   [2] cuda_kmeans(float**, int, int, int, float, int*, int*) [253] ____nv_dummy_param_ref(void*) (host_runtime.h) [263] __nv_save_fatbinhandle_for_managed_rt(void**) (cuda_io.cu)
+ [239] checkLastCudaError()  [254] __sti____cudaRegisterAll() (tmpxft_0002d15c_00000000-5_cuda_main.cudafe1.stub.c) [264] __nv_save_fatbinhandle_for_managed_rt(void**) (cuda_wtime.cu)
+ [244] wtime()               [255] __sti____cudaRegisterAll() (tmpxft_0002d176_00000000-5_cuda_io.cudafe1.stub.c) [265] __nv_save_fatbinhandle_for_managed_rt(void**) (cuda_kmeans.cu)
+ [236] checkCuda(cudaError)  [256] __sti____cudaRegisterAll() (tmpxft_0002d193_00000000-5_cuda_wtime.cudafe1.stub.c) [243] __device_stub__Z20find_nearest_clusteriiiPfS_PiS0_(int, int, int, float*, float*, int*, int*) (tmpxft_0002d1af_00000000-5_cuda_kmeans.cudafe1.stub.c)
+ [248] file_read(int, char*, int*, int*) [257] __sti____cudaRegisterAll() (tmpxft_0002d1af_00000000-5_cuda_kmeans.cudafe1.stub.c) [237] dim3::dim3(unsigned int, unsigned int, unsigned int)
+ [240] compute_delta(int*, int, int) (cuda_kmeans.cu) [258] __nv_cudaEntityRegisterCallback(void**) (tmpxft_0002d15c_00000000-5_cuda_main.cudafe1.stub.c)
+ [249] nextPowerOfTwo(int) (cuda_kmeans.cu) [259] __nv_cudaEntityRegisterCallback(void**) (tmpxft_0002d176_00000000-5_cuda_io.cudafe1.stub.c)
